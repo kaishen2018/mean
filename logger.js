@@ -10,7 +10,7 @@ var myLogger = new winston.Logger({
   transports: [
     new (winston.transports.Syslog)(),
     new (winston.transports.Console)({timestamp: true, colorize: true, label: " mylabel"}),
-    new (winston.transports.File)({filename: '/data/log/mean.log', json: false})
+    new (winston.transports.File)({filename: 'log/mean.log', json: false})
   ]
 });
 
