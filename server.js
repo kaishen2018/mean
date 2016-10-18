@@ -24,7 +24,7 @@ var todoModel = mongoose.model('todo', {
 // configuration
 // app.configure(function () {
 // find static files
-app.use(express.static(__dirname.join('/public')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // display a log of all requests on console.
 // app.use(express.logger('dev'));
