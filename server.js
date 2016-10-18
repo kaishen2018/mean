@@ -45,7 +45,7 @@ app.get('/api/todos', function (req, res) {
         res.send(error);
       }
       res.json(todos);
-    })
+    });
   }, 5000);
 });
 
@@ -65,7 +65,7 @@ app.post('/api/todos', function (req, res) {
         }
         res.json(todos);
       });
-    })
+    });
   }, 5000);
 
   ;
@@ -80,11 +80,11 @@ app.post('/api/todos', function (req, res) {
       }
       todoModel.find(function (err, todos) {
         if (err) {
-          res.send(err)
+          res.send(err);
         }
-        res.json(todos)
+        res.json(todos);
       });
-    })
+    });
   });
 
   app.get('/*', function (req, res) {
