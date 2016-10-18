@@ -1,5 +1,5 @@
 # mean Introduction
-Demo project for node MEAN, in this project, we will show a simple demo to create a TODO list application using node MEAN framework.
+Demo project for node MEAN, in this project, we will show a simple demo to create a TODO list application using node MEAN framework. this could be backend sever for the TODO APP.
 
 ## Steps:
 ### Step 1: prepare install softwares

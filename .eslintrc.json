@@ -1,0 +1,12 @@
+{
+    "extends": "standard",
+    "plugins": [
+        "standard",
+        "promise"
+    ],
+    "rules": {
+        "no-eq-null": 0,
+        "semi":["warn", "always"],
+        "no-unused-vars": ["warn"]
+    }
+}

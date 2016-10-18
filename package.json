@@ -4,7 +4,12 @@
   "description": "MEAN sample, ",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover tape \"test/*.js\" ",
+    "test-local": " tape \"test/index.js\" | faucet",
+    "lint-local": "eslint server.js",
+    "ci-lint": "eslint -f checkstyle server.js -o checkstyle-result.xml",
+    "ci-test": "istanbul cover tape \"test/*.js\"> test.tap && istanbul report clover",
+    "start": "node server.js"
   },
   "keywords": [
     "mean",
@@ -25,6 +30,14 @@
     "winston-syslog": "^1.2.1"
   },
   "devDependencies": {
-    "supertest": "^2.0.0"
+    "supertest": "^2.0.0",
+    "eslint": "^3.6.1",
+    "eslint-config-standard": "^6.1.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.1",
+    "faucet": "0.0.1",
+    "istanbul": "^0.4.5",
+    "tape": "^4.6.0",
+    "tape-catch": "^1.0.6"
   }
 }

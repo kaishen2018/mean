@@ -39,29 +39,35 @@ app.use(bodyParser.json());
 
 // Routes of out API  -- start ------
 app.get('/api/todos', function (req, res) {
-  todoModel.find(function (error, todos) {
-    if (error) {
-      res.send(error);
-    }
-    res.json(todos);
-  })
+  setTimeout( function() {
+    todoModel.find(function (error, todos) {
+      if (error) {
+        res.send(error);
+      }
+      res.json(todos);
+    })
+  }, 5000);
 });
 
 app.post('/api/todos', function (req, res) {
-  todoModel.create({
-    text: req.body.text,
-    done: false
-  }, function (err, todo) {
-    if (err) {
-      res.send(err);
-    }
-    todoModel.find(function (err, todos) {
+  setTimeout( function () {
+    console.log( 'req body: ',  JSON.stringify(req.body));
+    todoModel.create({
+      text: req.body.text,
+      done: false
+    }, function (err, todo) {
       if (err) {
         res.send(err);
       }
-      res.json(todos);
-    });
-  });
+      todoModel.find(function (err, todos) {
+        if (err) {
+          res.send(err);
+        }
+        res.json(todos);
+      });
+  }) }, 5000);
+
+  ;
   // });
 
   app.delete('/api/todos/:todo', function (req, res) {
@@ -92,3 +98,5 @@ app.post('/api/todos', function (req, res) {
 app.listen(8888, function () {
   myLogger.info('mean server is up and listening port : 8888');
 });
+
+exports.default = app;
