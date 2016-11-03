@@ -1,0 +1,16 @@
+<!--List All -->
+
+<div id="todo-list" class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+        <div class="checkbox" ng-repeat="todo in todos | orderBy: 'text'">
+            <label>
+                <input type="checkbox" ng-click="deleteTodo(todo._id)">
+                {{ $index + 1 }} :  {{todo.text}} <a href ng-click="gotoDetailPage(todo._id)">Edit</a>
+            </label>
+        </div>
+    </div>
+    <div class="col-sm-4 col-sm-offset-4"> <a class="btn btn-default" href ui-sref="todos.add">add new item</a> </div>
+</div>
+
+<hr>
+<div data-ui-view></div>

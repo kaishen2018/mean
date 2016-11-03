@@ -1,0 +1,19 @@
+2016-10-18T15:34:12.408Z - [32minfo[39m: [ mylabel] mean server is up and listening port : 8888
+TAP version 13
+# beep boop
+ok 1 should be equal
+ok 2 should be equivalent
+
+=============================== Coverage summary ===============================
+Statements   : 52.94% ( 27/51 )
+Branches     : 0% ( 0/10 )
+Functions    : 8.33% ( 1/12 )
+Lines        : 52.94% ( 27/51 )
+================================================================================
+
+1..2
+# tests 2
+# pass  2
+
+# ok
+

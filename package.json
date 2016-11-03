@@ -4,19 +4,22 @@
   "description": "MEAN sample, ",
   "main": "main.js",
   "scripts": {
-    "test": "istanbul cover tape \"test/*.js\" ",
-    "test-local": " tape \"test/index.js\" | faucet",
-    "lint-local": "eslint server.js",
-    "ci-lint": "eslint -f checkstyle server.js -o checkstyle-result.xml",
-    "ci-test": "istanbul cover tape \"test/*.js\"> test.tap && istanbul report clover",
-    "start": "node server.js"
+    "test": "istanbul cover tape \"src/test/*.js\" ",
+    "test-local": " tape \"src/test/index.js\" | faucet",
+    "lint-local": "eslint src/server/**",
+    "ci-lint": "eslint -f checkstyle src/server/** -o checkstyle-result.xml",
+    "ci-test": "istanbul cover tape \"src/test/*.js\"> test.tap && istanbul report clover",
+    "start": "node index.js",
+    "start-dev": "nodemon index.js"
   },
   "keywords": [
     "mean",
     "MogoDB",
     "Express",
-    "Angular",
-    "NodeJS"
+    "AngularJS",
+    "NodeJS",
+    "tape",
+    "checkstyle"
   ],
   "author": "Kaishen",
   "license": "ISC",
@@ -38,6 +41,7 @@
     "faucet": "0.0.1",
     "istanbul": "^0.4.5",
     "tape": "^4.6.0",
-    "tape-catch": "^1.0.6"
+    "tape-catch": "^1.0.6",
+    "nodemon": "^1.11.0"
   }
 }

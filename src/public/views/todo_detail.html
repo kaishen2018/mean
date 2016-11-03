@@ -1,0 +1,18 @@
+<!--Header-->
+<div class="text-center">
+    <h4>Edit task detail info</h4>
+</div>
+
+<!-- item info -->
+<div id="todo-list" class="row" ng-hide="false">
+    <div class="col-sm-4 col-sm-offset-4 text-center">
+        <form>
+            <div class="form-group">
+                <input type="hidden" ng-model="todo._id"/>
+                <input type="text" class="form-control input-lg text-center" placeholder="Enter new task"
+                       ng-model="todo.text" required>
+            </div>
+            <button class="btn btn-primary btn-lg" ng-click="updateTodo()"> Save</button>
+        </form>
+    </div>
+</div>

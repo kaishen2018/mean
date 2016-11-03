@@ -1,4 +1,5 @@
 
+var path = require('path');
 // setup the default winston logger
 const winston = require('winston');
 require('winston-syslog').Syslog;

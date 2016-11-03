@@ -1,5 +1,5 @@
 var test = require('tape');
-var app = require('../server.js');
+var app = require('../server/server.js');
 
 process.on('uncaughtException', err => {
     console.log('uncaughtException');

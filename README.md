@@ -45,6 +45,10 @@ http://www.yiibai.com/mongodb/mongodb_environment.html
 http://expressjs.com/
 - AngularJS  
 https://docs.angularjs.org/
+https://angular.cn/
+http://www.angularjsapi.cn/#/a
+https://angular.io/
+http://www.runoob.com/angularjs/angularjs-html-events.html
 - Bootstrap  
 http://getbootstrap.com/
 
