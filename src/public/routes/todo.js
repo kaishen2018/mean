@@ -4,6 +4,7 @@
 
 function todoRoute($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise("/todos");
+
   $stateProvider
     .state('todos', {
       url: '/todos',

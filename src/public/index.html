@@ -16,23 +16,23 @@
 
 <body ng-app="angularTodo" ng-controller="todoController">
 
-<!--Header-->
-<div class="jumbotron text-center">
-    <h1>TODO List <span class="label label-info">{{todos.length}}</span></h1>
-</div>
+    <!--Header-->
+    <div class="jumbotron text-center">
+        <h1>TODO List <span class="label label-info">{{todos.length}}</span></h1>
+    </div>
 
-<a ui-sref="todos">Home</a>
-<a ui-sref="state1">State 1</a>
-<a ui-sref="state2">State 2</a>
-<hr>
-<!-- ng ui view -->
-<div ui-view></div>
+    <a ui-sref="todos">Home</a>
+    <a ui-sref="state1">State 1</a>
+    <a ui-sref="state2">State 2</a>
+    <hr>
+    <!-- ng ui view -->
+    <div ui-view></div>
 
 
-<!-- Load customized js -->
-<script src="controllers/todo.js"></script>
-<script src="routes/todo.js"></script>
-<script src="todo_main.js"></script>
+    <!-- Load customized js -->
+    <script src="controllers/todo.js"></script>
+    <script src="routes/todo.js"></script>
+    <script src="todo_main.js"></script>
 
 </body>
 </html>

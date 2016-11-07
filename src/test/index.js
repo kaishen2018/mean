@@ -10,7 +10,7 @@ process.on('uncaughtException', err => {
 test('beep boop', function (t) {
     t.plan(2);
 
-    t.equal(1 + 1, 2);
+    t.equal(1 + 1, 3);
     setTimeout(function () {
         t.deepEqual(
             'ABC'.toLowerCase().split(''),

@@ -6,9 +6,11 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var myLogger = require('./utils/logger');
+var response = require('./constants/response')
 
 // import routers
-var todo = require('./routes/todo');
+var todoRoute = require('./routes/todo');
+var typeRoute = require('./routes/type');
 
 // override with different headers; last one takes precedence
 app.use(methodOverride('X-HTTP-Method'));          // Microsoft
@@ -32,7 +34,60 @@ app.use(bodyParser.json());
 
 
 // register routers
-app.use('/api/todos', todo);
+app.use('/api/todos', todoRoute);
+app.use('/api/types', typeRoute);
+
+
+app.use(logErrors);
+app.use(clientErrorHandler);
+app.use(errorHandler);
+
+
+/**
+ *
+ * Log errors
+ *
+ * @param err
+ * @param req
+ * @param res
+ * @param next
+ */
+function logErrors (err, req, res, next) {
+  myLogger.error('error occurs: ' + err.stack);
+  next(err)
+}
+
+/**
+ *
+ *
+ * @param err
+ * @param req
+ * @param res
+ * @param next
+ */
+function clientErrorHandler (err, req, res, next) {
+  if (req.xhr) {
+    res.status(500).send(response.errorResponse)
+  } else {
+    next(err)
+  }
+}
+
+/**
+ *
+ * @param err
+ * @param req
+ * @param res
+ * @param next
+ * @returns {*}
+ */
+function errorHandler (err, req, res, next) {
+  if (res.headersSent) {
+    return next(err)
+  }
+  res.status(500);
+  res.send(response.errorResponse);
+}
 
 // start listening port
 app.listen(8888, function () {
