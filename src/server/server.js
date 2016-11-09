@@ -12,6 +12,7 @@ var response = require('./constants/response')
 var todoRoute = require('./routes/todo');
 var typeRoute = require('./routes/type');
 var workgroupRoute = require('./routes/workgroup');
+var statusRoute = require('./routes/status');
 
 // override with different headers; last one takes precedence
 app.use(methodOverride('X-HTTP-Method'));          // Microsoft
@@ -38,6 +39,8 @@ app.use(bodyParser.json());
 app.use('/api/todos', todoRoute);
 app.use('/api/types', typeRoute); 
 app.use('/api/workgroups', workgroupRoute);
+app.use('/api/status', statusRoute);
+
 
 
 app.use(logErrors);

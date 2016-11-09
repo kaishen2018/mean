@@ -1,6 +1,6 @@
 ﻿/*
 *
-* @Name: workgroupData
+* @Name: statusData
 * @Description: 
 *
 * @Author: yejing
@@ -14,10 +14,10 @@ var Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 
 var Schema = new Schema({
-    workgroup_name: { type: String, match: /[a-zA-Z]/, unique: true, required: true },
-    workgroup_desc: { type: String, default: "", unique: true },
-    owner: { type: String, default: "", unique: true },
-    created_by : { type: String, default: "", unique: true },
+    status_name: { type: String, match: /[a-zA-Z]/, unique: true, required: true },
+    status_desc: { type: String, default: "", unique: true },
+    status_type: { type: String, default: "", unique: true },
+    created_by: { type: String, default: "", unique: true },
     created_date: { type: Date, default: Date.now },
     last_updated_by: { type: String, default: "", unique: true },
     last_updated_date: { type: Date, default: Date.now }
@@ -57,11 +57,11 @@ Schema.statics.findByText = function (name, cb) {
 // Instance Method
 // assign a function to the "methods" object of our animalSchema
 Schema.methods.findSimilarTypes = function (cb) {
-    return this.model('cm_workgroup_def').find({ type: this.type }, cb);
+    return this.model('cm_status_def').find({ type: this.type }, cb);
 };
 
 /*
 * reflect the table structure into MongoDB.
 * */
-var typeModel = mongoose.model('cm_workgroup_def', Schema);
+var typeModel = mongoose.model('cm_status_def', Schema);
 module.exports = typeModel;

@@ -1,7 +1,7 @@
 ﻿/*
  *
- * @Name: workgroup.js
- * @Description: define the express route for workgroup CRUD
+ * @Name: status.js
+ * @Description: define the express route for status CRUD
  *
  * @Author: yejing
  * @Date: 2016-11-09
@@ -12,7 +12,7 @@
 var express = require('express');
 var router = express.Router();
 var myLogger = require('../utils/logger');
-var dataModel = require('../models/workgroupData')
+var dataModel = require('../models/statusData')
 var response = require('../constants/response')
 
 /*
@@ -21,7 +21,7 @@ var response = require('../constants/response')
  *
  * */
 router.use(function timeLog(req, res, next) {
-    myLogger.log(" In workgroup router -> Time: ", Date.now())
+    myLogger.log(" In status router -> Time: ", Date.now())
     next();
 })
 
@@ -43,7 +43,7 @@ router.get('/', function (req, res, next) {
 
 /**
  *
- * create a new workgroup
+ * create a new status
  *
  */
 router.post('/', function (req, res, next) {
@@ -51,9 +51,9 @@ router.post('/', function (req, res, next) {
     myLogger.log('req body: ', JSON.stringify(req.query));
 
     dataModel.create({
-        workgroup_name: req.query.name,
-        workgroup_desc: req.query.description
-        //workgroup_name: req.body.name,
+        status_name: req.query.name,
+        status_desc: req.query.description
+        //status_name: req.body.name,
         //workgorup_desc: req.body.description
     }, function (err, result) {
         if (err) {
@@ -66,7 +66,7 @@ router.post('/', function (req, res, next) {
 
 /**
  *
- * Update a workgroup
+ * Update a status
  *
  */
 router.put('/', function (req, res, next) {
@@ -84,7 +84,7 @@ router.put('/', function (req, res, next) {
 
 /**
  *
- * delete a workgroup by Id
+ * delete a status by Id
  *
  */
 router.delete('/:id', function (req, res, next) {
@@ -101,7 +101,7 @@ router.delete('/:id', function (req, res, next) {
 
 /**
  *
- * get workgroup detail by id
+ * get status detail by id
  *
  */
 router.get('/:id', function (req, res, next) {
