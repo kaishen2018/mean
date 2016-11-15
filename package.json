@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "test": "istanbul cover tape \"src/test/*.js\" ",
-    "test-local": " tape \"src/test/index.jsd\" | faucet",
-    "lint-local": "eslint src/server/**",
+    "test-local": " tape \"src/test/index.js\" | faucet",
+    "lint-local": "eslint src/test/index.js",
     "ci-lint": "eslint -f checkstyle src/server/** -o checkstyle-result.xml",
     "ci-test": "istanbul cover tape \"src/test/*.js\"> test.tap && istanbul report clover",
     "start": "node index.js",
