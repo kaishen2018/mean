@@ -14,6 +14,7 @@ var typeRoute = require('./routes/type');
 var workgroupRoute = require('./routes/workgroup');
 var statusRoute = require('./routes/status');
 var ciRoute = require('./routes/configItem');
+var servicerequestRoute = require('./routes/servicerequest');
 
 
 // override with different headers; last one takes precedence
@@ -43,6 +44,7 @@ app.use('/api/types', typeRoute);
 app.use('/api/workgroups', workgroupRoute);
 app.use('/api/status', statusRoute);
 app.use('/api/cis', ciRoute);
+app.use('/api/servicerequest', servicerequestRoute);
 
 
 

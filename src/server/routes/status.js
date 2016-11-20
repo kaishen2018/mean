@@ -47,14 +47,11 @@ router.get('/', function (req, res, next) {
  *
  */
 router.post('/', function (req, res, next) {
-    //myLogger.log('req body: ', JSON.stringify(req.body));
-    myLogger.log('req body: ', JSON.stringify(req.query));
+    myLogger.log('req body: ', JSON.stringify(req.body));
 
     dataModel.create({
-        status_name: req.query.name,
-        status_desc: req.query.description
-        //status_name: req.body.name,
-        //workgorup_desc: req.body.description
+        status_name: req.body.name,
+        workgorup_desc: req.body.description
     }, function (err, result) {
         if (err) {
             next(err);
