@@ -15,11 +15,11 @@ var Schema = mongoose.Schema,
 
 var Schema = new Schema({
     workgroup_name: { type: String, match: /[a-zA-Z]/, unique: true, required: true },
-    workgroup_desc: { type: String, default: "", unique: true },
-    owner: { type: String, default: "", unique: true },
-    created_by : { type: String, default: "", unique: true },
+    workgroup_desc: { type: String, default: "" },
+    owner: { type: String, default: "admin" },
+    created_by : { type: String, default: ""},
     created_date: { type: Date, default: Date.now },
-    last_updated_by: { type: String, default: "", unique: true },
+    last_updated_by: { type: String, default: ""},
     last_updated_date: { type: Date, default: Date.now }
 });
 

@@ -1,11 +1,10 @@
 /*
 *
-* @Name: typeData
-* @Description: this type data model stands for the type of Configuration Item,
-*               it will identify a CI as Software/ Server/ Database, etc.
+* @Name: configurationItemData
+* @Description: this configurate item data model stands for the a Configuration Item, it stores the CI name, type, owner and workgroup info.
 *
 * @Author: Kaishen Yang
-* @Date: 2016-11-06
+* @Date: 2016-11-17
 *
 * */
 
@@ -15,8 +14,12 @@ var Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 
 var Schema = new Schema({
-  type_name: {type: String, match: /[a-zA-Z]/, unique: true, required: true},
-  type_description: {type: String, required: true},
+  config_item_code: {type: String, match: /[a-zA-Z0-9]/, unique: true, required: true},
+  config_item_name: {type: String, match: /[a-zA-Z]/, unique: true, required: true},
+  config_item_desc: {type: String, default: ""},
+  workgroup_id: {type: ObjectId, ref: "cm_workgroup_def"},
+  owner: {type: String, default: "admin", required: true},
+  type_id: {type: ObjectId, ref: "cm_config_type"},
   created_by: {type: String, default: "admin"},
   created_date: {type: Date, default: Date.now},
   last_updated_by: {type: String, default: "admin"},
@@ -57,11 +60,11 @@ Schema.statics.findByText = function(name, cb) {
 // Instance Method
 // assign a function to the "methods" object of our animalSchema
 Schema.methods.findSimilarTypes = function(cb) {
-  return this.model('cm_config_type').find({ type: this.type }, cb);
+  return this.model('cm_type').find({ type: this.type }, cb);
 };
 
 /*
 * reflect the table structure into MongoDB.
 * */
-var typeModel = mongoose.model('cm_config_type', Schema);
+var typeModel = mongoose.model('cm_config_item', Schema);
 module.exports = typeModel;

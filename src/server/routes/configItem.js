@@ -12,7 +12,7 @@
 var express = require('express');
 var router = express.Router();
 var myLogger = require('../utils/logger');
-var dataModel = require('../models/typeData')
+var dataModel = require('../models/configItemData')
 var response = require('../constants/response')
 
 /*
@@ -50,8 +50,12 @@ router.post('/', function (req, res, next) {
   myLogger.log('req body: ', JSON.stringify(req.body));
 
   dataModel.create({
-    type_name: req.body.type_name,
-    type_description: req.body.type_description
+    config_item_code: req.body.config_item_code,
+    config_item_name: req.body.config_item_name,
+    config_item_desc: req.body.config_item_desc,
+    workgroup_id: req.body.workgroup_id,
+    owner: req.body.owner,
+    type_id: req.body.type_id
   }, function (err, result) {
     if (err) {
       next(err);

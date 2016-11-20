@@ -13,6 +13,8 @@ var todoRoute = require('./routes/todo');
 var typeRoute = require('./routes/type');
 var workgroupRoute = require('./routes/workgroup');
 var statusRoute = require('./routes/status');
+var ciRoute = require('./routes/configItem');
+
 
 // override with different headers; last one takes precedence
 app.use(methodOverride('X-HTTP-Method'));          // Microsoft
@@ -40,6 +42,7 @@ app.use('/api/todos', todoRoute);
 app.use('/api/types', typeRoute); 
 app.use('/api/workgroups', workgroupRoute);
 app.use('/api/status', statusRoute);
+app.use('/api/cis', ciRoute);
 
 
 
@@ -91,7 +94,8 @@ function errorHandler (err, req, res, next) {
     return next(err)
   }
   res.status(500);
-  res.send(response.errorResponse);
+  // res.send(response.errorResponse);
+  res.send(err);
 }
 
 // start listening port
