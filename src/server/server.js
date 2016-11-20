@@ -9,8 +9,10 @@ var myLogger = require('./utils/logger');
 var response = require('./constants/response')
 
 // import routers
-var todoRoute = require('./routes/todo');
-var typeRoute = require('./routes/type');
+// var todoRoute = require('./routes/todo');
+// var typeRoute = require('./routes/type');
+var storeRoute = require('./routes/store');
+var invoiceRoute = require('./routes/invoice');
 
 // override with different headers; last one takes precedence
 app.use(methodOverride('X-HTTP-Method'));          // Microsoft
@@ -34,8 +36,10 @@ app.use(bodyParser.json());
 
 
 // register routers
-app.use('/api/todos', todoRoute);
-app.use('/api/types', typeRoute);
+// app.use('/api/todos', todoRoute);
+// app.use('/api/types', typeRoute);
+app.use('/api/stores', storeRoute);
+app.use('/api/invoices', invoiceRoute);
 
 
 app.use(logErrors);

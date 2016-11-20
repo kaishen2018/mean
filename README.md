@@ -41,6 +41,9 @@ http://nodejs.cn/
 https://docs.mongodb.com
 https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-os-x/
 http://www.yiibai.com/mongodb/mongodb_environment.html
+- mysql
+https://npm.taobao.org/package/mysql
+https://github.com/mysqljs/mysql
 - Express  
 http://expressjs.com/
 - AngularJS  
