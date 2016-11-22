@@ -24,10 +24,24 @@ function handleError (err) {
   }
 }
 
-var db = mysql.createConnection({
+/**
+ * use local mysql server
+ * */
+/*var db = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
   password : 'root',
+  database : 'sbux_payment'
+});*/
+
+/**
+ * this is a server in softtek server
+ * @type {Connection}
+ */
+var db = mysql.createConnection({
+  host     : '172.16.98.166',
+  user     : 'sbux',
+  password : 'sbux123',
   database : 'sbux_payment'
 });
 
