@@ -1,0 +1,58 @@
+﻿            <!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>用户管理</h1>
+    <ol class="breadcrumb">
+        <li><a href="/views/index.html#/home"><i class="fa fa-dashboard"></i>首页</a></li>
+        <li><a href="/views/index.html#/user"><i class="fa fa-dashboard"></i>用户</a></li>
+        <li class="active">编辑用户信息</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">编辑用户信息</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <form role="form" name="userForm">
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="username">姓名:</label>
+                            <input type="text" class="form-control" id="username" placeholder="姓名" ng-model="user.user_full_name" required value="{{user.user_full_name}}">
+                        </div>
+                        <div class="form-group">
+                            <label>性别:</label>
+                            <select class="form-control" ng-model="user.gender" >
+                                <option id="{{genders.id}}" ng-repeat="genders in genderSelect" value={{genders.id}}>{{genders.name}}</option>                            
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthday">出生日期</label>
+                            <input type="date" class="form-control" id="birthday" ng-model="user.birthday"  required >
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">联系电话</label>
+                            <input type="text" class="form-control" id="phone" placeholder="联系电话" ng-model="user.telephone" required >
+                        </div><div class="form-group">
+                            <label for="mobile">手机号码</label>
+                            <input type="text" class="form-control" id="mobile" placeholder="手机号码" ng-model="user.mobile" required >
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <div class="box-footer">
+                        <button type="button" class="btn btn-primary" ng-disabled="userForm.user_full_name.$error.required&&userForm.birthday.$error.required&&userForm.telephone.$error.required &&userForm.mobile.$error.required" ng-click="updateUser()">保存</button>
+                        <a href="/views/index.html#/user" class="btn btn-primary">取消</a>
+                    </div>
+                </form>
+            </div>
+            <!-- /.box -->
+        </div>        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->
