@@ -15,7 +15,8 @@ var workgroupRoute = require('./routes/workgroup');
 var statusRoute = require('./routes/status');
 var ciRoute = require('./routes/configItem');
 var servicerequestRoute = require('./routes/servicerequest');
-
+var userRoute = require('./routes/user');
+var categoryRoute = require('./routes/category');
 
 // override with different headers; last one takes precedence
 app.use(methodOverride('X-HTTP-Method'));          // Microsoft
@@ -36,8 +37,6 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
 // parse application/json
 app.use(bodyParser.json());
-
-
 // register routers
 app.use('/api/todos', todoRoute);
 app.use('/api/types', typeRoute); 
@@ -45,6 +44,8 @@ app.use('/api/workgroups', workgroupRoute);
 app.use('/api/status', statusRoute);
 app.use('/api/cis', ciRoute);
 app.use('/api/servicerequest', servicerequestRoute);
+app.use('/api/user', userRoute);
+app.use('/api/category', categoryRoute);
 
 
 
