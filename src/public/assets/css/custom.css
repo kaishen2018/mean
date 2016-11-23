@@ -1,0 +1,12 @@
+﻿td input{
+    margin-top:3px;
+    margin-left:3px;
+}
+.border-top {
+border-top:1px solid #f4f4f4;
+padding-top:1vw;
+}
+.subcategory .col-md-6,
+.subcategory select {
+min-height:300px;
+}
