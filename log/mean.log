@@ -11,3 +11,30 @@
 2016-10-18T14:57:37.806Z - info: mean server is up and listening port : 8888
 2016-10-18T14:58:03.965Z - info: mean server is up and listening port : 8888
 2016-10-18T14:58:22.737Z - info: mean server is up and listening port : 8888
+2016-11-23T02:42:42.571Z - info: mean server is up and listening port : 8888
+2016-11-23T02:46:01.495Z - info: mean server is up and listening port : 8888
+2016-11-24T14:35:46.868Z - info: mean server is up and listening port : 8888
+2016-11-24T15:57:49.820Z - info: mean server is up and listening port : 8888
+2016-11-24T16:14:44.276Z - info: mean server is up and listening port : 8888
+2016-11-24T16:24:50.522Z - error: error occurs: ValidationError: cm_user_info validation failed
+    at MongooseError.ValidationError (/Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/error/validation.js:22:11)
+    at model.Document.invalidate (/Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/document.js:1427:32)
+    at /Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/document.js:1303:17
+    at validate (/Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/schematype.js:705:7)
+    at /Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/schematype.js:742:9
+    at Array.forEach (native)
+    at SchemaString.SchemaType.doValidate (/Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/schematype.js:710:19)
+    at /Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/document.js:1301:9
+    at nextTickCallbackWith0Args (node.js:420:9)
+    at process._tickCallback (node.js:349:13)
+2016-11-24T16:24:51.573Z - error: error occurs: ValidationError: cm_user_info validation failed
+    at MongooseError.ValidationError (/Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/error/validation.js:22:11)
+    at model.Document.invalidate (/Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/document.js:1427:32)
+    at /Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/document.js:1303:17
+    at validate (/Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/schematype.js:705:7)
+    at /Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/schematype.js:742:9
+    at Array.forEach (native)
+    at SchemaString.SchemaType.doValidate (/Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/schematype.js:710:19)
+    at /Users/kaishen/Documents/Confidential/github/mean/node_modules/mongoose/lib/document.js:1301:9
+    at nextTickCallbackWith0Args (node.js:420:9)
+    at process._tickCallback (node.js:349:13)

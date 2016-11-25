@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My ToDo List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!--<link rel="stylesheet" href="assets/css/bootstrap.min.css">-->
+
+    <!--<script src="http://code.angularjs.org/1.5.8/angular.min.js"></script>-->
+
+    <script src="https://cdn.jsdelivr.net/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/angular.ui-router/1.0.0-alpha0/angular-ui-router.min.js"></script>
+</head>
+
+<body ng-app="angularTodo" ng-controller="todoController">
+
+    <!--Header-->
+    <div class="jumbotron text-center">
+        <h1>TODO List <span class="label label-info">{{todos.length}}</span></h1>
+    </div>
+
+    <a ui-sref="todos">Home</a>
+    <a ui-sref="state1">State 1</a>
+    <a ui-sref="state2">State 2</a>
+    <hr>
+    <!-- ng ui view -->
+    <div ui-view></div>
+
+
+    <!-- Load customized js -->
+    <script src="controllers/todo.js"></script>
+    <script src="routes/todo.js"></script>
+    <script src="todo_main.js"></script>
+
+</body>
+</html>
